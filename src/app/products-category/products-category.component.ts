@@ -12,7 +12,7 @@ export class ProductsCategoryComponent implements OnInit {
   id!: number;
   list: Product[] = []; // Liste filtrée des produits
   listProducts: Product[] = [
-    { id: 1, name: 'Refrigérateur LG Inox', image: 'assets/images/refrigerateur-lg.jpg', categoryId: 1, description: '', price: 2800, brand: 'LG', promotion: 0 },
+    { id: 1, name: 'Refrigérateur LG Inox', image: 'assets/images/produits_nettoyages.jpg', categoryId: 1, description: '', price: 2800, brand: 'LG', promotion: 0 },
     { id: 2, name: 'Refrigérateur Samsung Blanc', image: 'assets/images/refrigerateur_samsung.jpeg', categoryId: 1, description: '', price: 2400, brand: 'Samsung', promotion: 0 },
     { id: 3, name: 'Lave vaisselle Beko', image: 'assets/images/lave_vaisselle.png', categoryId: 1, description: '', price: 1875, brand: 'BEKO', promotion: 0 },
     { id: 4, name: 'Oppo Smart Phone', image: 'assets/images/oppo_smart.jpg', categoryId: 4, description: '', price: 1200, brand: 'OPPO', promotion: 0 },

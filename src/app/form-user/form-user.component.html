@@ -1,0 +1,99 @@
+<form #userForm="ngForm" (ngSubmit)="saveUser()" novalidate>
+  <!-- First Name -->
+  <div>
+    <label for="firstName">First Name:</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      [(ngModel)]="user.firstName"
+      #firstName="ngModel"
+      required
+      minlength="3"
+      pattern="[a-zA-Z]*"
+    />
+    <!-- Afficher les erreurs -->
+    <div *ngIf="firstName.invalid && firstName.touched">
+      <small *ngIf="firstName.errors?.['required']">First Name est obligatoire.</small>
+      <small *ngIf="firstName.errors?.['minlength']">Doit contenir au moins 3 caractères.</small>
+      <small *ngIf="firstName.errors?.['pattern']">Uniquement des lettres sont autorisées.</small>
+    </div>
+  </div>
+
+  <!-- Last Name -->
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      [(ngModel)]="user.lastName"
+      #lastName="ngModel"
+      required
+      minlength="3"
+      pattern="[a-zA-Z]*"
+    />
+    <!-- Afficher les erreurs -->
+    <div *ngIf="lastName.invalid && lastName.touched">
+      <small *ngIf="lastName.errors?.['required']">Last Name est obligatoire.</small>
+      <small *ngIf="lastName.errors?.['minlength']">Doit contenir au moins 3 caractères.</small>
+      <small *ngIf="lastName.errors?.['pattern']">Uniquement des lettres sont autorisées.</small>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div>
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      [(ngModel)]="user.email"
+      #email="ngModel"
+      required
+      pattern="^[a-zA-Z0-9._-]+@gmail.com"
+    />
+    <!-- Afficher les erreurs -->
+    <div *ngIf="email.invalid && email.touched">
+      <small *ngIf="email.errors?.['required']">Email est obligatoire.</small>
+      <small *ngIf="email.errors?.['pattern']">Doit se terminer par gmail.com.</small>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div>
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      required
+      pattern="^[a-zA-Z0-9]{8,}?"
+    />
+    <!-- Afficher les erreurs -->
+    <div *ngIf="password.invalid && password.touched">
+      <small *ngIf="password.errors?.['required']">Mot de passe est obligatoire.</small>
+      <small *ngIf="password.errors?.['pattern']">
+        Doit contenir au moins 8 caractères avec lettres et chiffres.
+      </small>
+    </div>
+  </div>
+
+  <!-- Category -->
+  <div>
+    <label for="category">Category:</label>
+    <input
+      type="text"
+      id="category"
+      name="category"
+      [(ngModel)]="user.category"
+      #category="ngModel"
+      readonly
+    />
+  </div>
+
+  <!-- Bouton Save -->
+  <button type="submit" [disabled]="userForm.invalid">Save</button>
+</form>

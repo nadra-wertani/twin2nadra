@@ -14,6 +14,8 @@ import { HighlightDirective } from './highlight.directive';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { UserComponent } from './user/user/user.component';
+import { FormUserComponent } from './form-user/form-user.component';
+import { CardComponentComponent } from './card-component/card-component.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { UserComponent } from './user/user/user.component';
     HighlightDirective,
     NotFoundPageComponent,
     ProductsCategoryComponent,
+    FormUserComponent,
+    CardComponentComponent,
     //UserComponent,
    
   ],
@@ -33,6 +37,7 @@ import { UserComponent } from './user/user/user.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,13 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let categorie of categories">
-      <img [src]="categorie.image" [alt]="categorie.title" class="img-fluid h-50 w-75">
-      <h3>{{ categorie.title }}</h3>
-      <button class="btn btn-primary" [routerLink]="['/products-category', categorie.id]">Voir produits</button>
+
+  <div class="container">
+    <div class="row">
+      <app-card-component *ngFor="let categorie of categories" 
+                [id]="categorie.id" 
+                [title]="categorie.title" 
+                [image]="categorie.image" 
+                [available]="categorie.available"
+                (shortedList)="addToShortList($event)">
+      </app-card-component>
     </div>
   </div>
-</div>
+  

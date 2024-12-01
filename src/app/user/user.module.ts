@@ -12,4 +12,10 @@ import { UserComponent } from './user/user.component';
     ])
   ]
 })
-export class UserModule { }
+export class UserModule { 
+  firstName!: string;
+  lastName!: string;
+  email!: string;
+  category: string = 'Customer'; // Valeur par défaut
+  password!: string;
+}
